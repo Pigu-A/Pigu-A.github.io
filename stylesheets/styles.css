@@ -529,7 +529,7 @@ table {
 }
 
 body {
-  padding: 0px 0 20px 0px;
+  padding: 10px;
   margin: 0px;
   font: 14px/1.5 "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #f0e7d5;
@@ -552,7 +552,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p, ul, ol, table, pre, dl {
-  margin: 0 0 20px;
+  margin: 0 0 10px;
 }
 
 h1, h2, h3 {
@@ -848,4 +848,102 @@ section #title .credits.right {
   nav {
     display: none;
   }
+}
+
+/* Trainer Card */
+.trainer-card {
+	border: 2px solid white;
+	width: 980px;
+	margin-bottom: 20px;
+}
+
+.trainer-info {
+	padding: 5px;
+	border-bottom: 2px solid white;
+	height: 68px;
+}
+
+.trainer-pic {
+	border: 2px solid #bbb;
+	display: inline-block;
+	width: 64px;
+	height: 64px;
+	float: left;
+}
+
+.trainer-pic img{
+	width: 64px;
+	height: 64px;
+}
+
+.trainer-name {
+	display: inline-block;
+	margin-left: 5px;
+	height: 64px;
+	float: left;
+}
+
+.trainer-name p {
+	font-size: 24px;
+	margin: 0 0 3px 2px;
+}
+
+.trainer-name small {
+	font-style: italic;
+}
+
+.trainer-reward {
+	float: right;
+	border-left: 2px solid white;
+	height: 68px;
+	width: 64px;
+	padding-left: 5px;
+}
+
+.trainer-reward div {
+	height: 50%;
+	text-align: center;
+}
+
+.trainer-reward div p {
+	margin: 0;
+	position: relative;
+	top: 6px;
+}
+
+.mon {
+	display: table-cell;
+	width: 160px;
+	border: 2px solid #bbb
+}
+
+.mon-head {
+	height: 24px;
+	border-bottom: 2px solid #bbb;
+}
+
+.mon-name {
+	display: inline-block;
+	float: left;
+	margin: 0 0 0 5px;
+}
+
+.mon-lvl {
+	display: inline-block;
+	float: right;
+	margin: 0 5px 0 0;
+	padding-left: 5px;
+	border-left: 2px solid #bbb;
+	height: 24px;
+}
+
+.mon-moves p {
+	height: 24px;
+	margin: 0 5px;
+	text-align: center;
+}
+
+.pokedollar {
+	background: url(pokedollar.png) no-repeat;
+	background-position: 10px 3px;
 }
