@@ -922,6 +922,10 @@ section #title .credits.right {
 	border-bottom: 2px solid #bbb;
 }
 
+.mon-head p {
+	text-align: center;
+}
+
 .mon-name {
 	display: inline-block;
 	float: left;

@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Pokémon Crystal: TPP Special Edition</title>
+    <link rel="stylesheet" href="../stylesheets/styles.css">
+    <link rel="stylesheet" href="../stylesheets/pygment_trac.css">
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="../javascripts/respond.js"></script>
+	<script src="../javascripts/trainercard.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<script>
+		$.get("trainers.json",function(o,s) {
+			$("#leader_traso").after(TrainerCard.createFromList(o.leader_traso));
+			$("#leader_proto").after(TrainerCard.createFromList(o.leader_proto));
+			$("#leader_e4").after(TrainerCard.createFromList(o.e4));
+			$("#leader_redaj").after(TrainerCard.createFromList(o.redaj));
+		});
+	</script>
+  </head>
+  <body>
+      <h1>The League</h1>
+	  <p>As the region changes, so does the Pokémon League too. Like all of main series Pokémon games, trainers need to defeat the gym leaders and obtain gym badges then defeat the Elite Four and a champion to become the new champion.</p>
+	  <p>Both of these two regions, Traso and Proto, have its own Pokémon League called Traso League and Proto League but both two shared the same building and Elite Four. Just like Indigo League and Johto League.</p>
+	  <p>Here is the list of Gym Leaders, Elite Four and the Champion. <small>(The detail about each gyms will be added later when I finished making the hack.)</small></p>
+	  <h3 id="leader_traso">Traso Region Gym Leaders</h3>
+	  <h3 id="e4">Elite Four and Champion <small>Coming soon!</small></h3>
+	  <h3 id="leader_proto">Proto Region Gym Leaders</h3>
+	  <h3 id="redaj">Important Pokémon Trainers <small>(You need to beat them to complete the game!)</small></h3>
+	</body>
+</html>

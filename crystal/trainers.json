@@ -1,0 +1,254 @@
+﻿{
+"leader_traso":[{
+	"name":"Balboa",
+	"nick":"The Hard as Rock Pokémon Master - Gives Stone Badge and TM04 (Rollout)",
+	"pic":"unknown",
+	"reward":"1800",
+	"mons":[{
+		"name":"Geodude",
+		"lv":12,
+		"item":"nothing",
+		"moves":["Tackle","Defense Curl","Rock Throw","Sandstorm"]
+	},{
+		"name":"Sandshrew",
+		"lv":15,
+		"item":"nothing",
+		"moves":["Scratch","Defense Curl","Sand Attack","Rollout"]
+	},{
+		"name":"Larvitar",
+		"lv":15,
+		"item":"nothing",
+		"moves":["Leer","Bite","Screech","Sandstorm"]
+	},{
+		"name":"Geodude",
+		"lv":16,
+		"item":"nothing",
+		"moves":["Tackle","Defense Curl","Rollout","Magnitude"]
+	},{
+		"name":"Onix",
+		"lv":18,
+		"item":"nothing",
+		"moves":["Tackle","Screech","Bind","Rock Throw"]
+	}]
+},{
+	"name":"Lilly",
+	"nick":" - Gives Flower Badge and TM22 (Solar Beam)",
+	"pic":"unknown",
+	"reward":"2500",
+	"mons":[{
+		"name":"Oddish",
+		"lv":18,
+		"item":"nothing",
+		"moves":["Absorb","Poison Powder","Stun Spore","Sleep Powder"]
+	},{
+		"name":"Tangela",
+		"lv":20,
+		"item":"nothing",
+		"moves":["Constrict","Sleep Powder","Absorb","Vine Whip"]
+	},{
+		"name":"Skiploom",
+		"lv":20,
+		"item":"nothing",
+		"moves":["Synthesis","Tackle","Stun Spore","Sleep Powder"]
+	},{
+		"name":"Sunflora",
+		"lv":23,
+		"item":"nothing",
+		"moves":["Pound","Sunny Day","Razor Leaf","Solar Beam"]
+	},{
+		"name":"Bellossom",
+		"lv":25,
+		"item":"nothing",
+		"moves":["Absorb","Sunny Day","Petal Dance","Solar Beam"]
+	}]
+},{
+	"name":"Nora",
+	"nick":" - Gives Square Badge and TM34 (Swagger)",
+	"pic":"unknown",
+	"reward":"3000",
+	"mons":[{
+		"name":"Furret",
+		"lv":24,
+		"item":"nothing",
+		"moves":["Scratch","Defense Curl","Quick Attack","Swagger"]
+	},{
+		"name":"Aipom",
+		"lv":26,
+		"item":"nothing",
+		"moves":["Scratch","Sand Attack","Baton Pass","Swagger"]
+	},{
+		"name":"Stantler",
+		"lv":26,
+		"item":"nothing",
+		"moves":["Leer","Hypnosis","Stomp","Swagger"]
+	},{
+		"name":"Miltank",
+		"lv":28,
+		"item":"nothing",
+		"moves":["Stomp","Milk Drink","Bide","Swagger"]
+	},{
+		"name":"Ursaring",
+		"lv":30,
+		"item":"nothing",
+		"moves":["Fury Swipes","Faint Attack","Lick","Swagger"]
+	}]
+},{
+	"name":"Natsky",
+	"nick":" - Gives Wing Badge and TM17 (Protect)",
+	"pic":"unknown",
+	"reward":"3600",
+	"mons":[{
+		"name":"Noctowl",
+		"lv":30,
+		"item":"nothing",
+		"moves":["Peck","Foresight","Hypnosis","Reflect"]
+	},{
+		"name":"Murkrow",
+		"lv":33,
+		"item":"nothing",
+		"moves":["Peck","Night Shade","Faint Attack","Protect"]
+	},{
+		"name":"Delibird",
+		"lv":33,
+		"item":"nothing",
+		"moves":["Present","Hidden Power","Protect","Double Team"]
+	},{
+		"name":"Fearow",
+		"lv":35,
+		"item":"nothing",
+		"moves":["Fury Attack","Pursuit","Mirror Move","Protect"]
+	},{
+		"name":"Dodrio",
+		"lv":38,
+		"item":"nothing",
+		"moves":["Tri Attack","Rage","Drill Peck","Protect"]
+	}]
+},{
+	"name":"Poisa",
+	"nick":" - Gives Pathogen Badge and TM36 (Sludge Bomb)",
+	"pic":"unknown",
+	"reward":"4000",
+	"mons":[{
+		"name":"Arbok",
+		"lv":35,
+		"item":"nothing",
+		"moves":["Poison Sting","Glare","Screech","Sludge Bomb"]
+	},{
+		"name":"Muk",
+		"lv":36,
+		"item":"nothing",
+		"moves":["Poison Gas","Minimize","Harden","Sludge Bomb"]
+	},{
+		"name":"Weezing",
+		"lv":37,
+		"item":"nothing",
+		"moves":["Smog","SmokeScreen","Selfdestruct","Sludge Bomb"]
+	},{
+		"name":"Nidoking",
+		"lv":38,
+		"item":"nothing",
+		"moves":["Poison Sting","Horn Attack","Thrash","Sludge Bomb"]
+	},{
+		"name":"Crobat",
+		"lv":40,
+		"item":"nothing",
+		"moves":["Supersonic","Bite","Confuse Ray","Sludge Bomb"]
+	}]
+},{
+	"name":"Aquaire",
+	"nick":" - Gives Dew Badge and TM18 (Rain Dance)",
+	"pic":"unknown",
+	"reward":"4700",
+	"mons":[{
+		"name":"Politoed",
+		"lv":42,
+		"item":"nothing",
+		"moves":["Water Gun","Hypnosis","Perish Song","Rain Dance"]
+	},{
+		"name":"Octillery",
+		"lv":43,
+		"item":"nothing",
+		"moves":["Aurora Beam","Octazooka","Focus Energy","Rain Dance"]
+	},{
+		"name":"Azumaril",
+		"lv":45,
+		"item":"nothing",
+		"moves":["Rollout","BubbleBeam","Double-Edge","Tail Whip"]
+	},{
+		"name":"Quagsire",
+		"lv":47,
+		"item":"nothing",
+		"moves":["Slam","Earthquake","Amnesia","Rain Dance"]
+	},{
+		"name":"Lapras",
+		"lv":47,
+		"item":"nothing",
+		"moves":["Body Slam","Perish Song","Ice Beam","Rain Dance"]
+	}]
+},{
+	"name":"Boomboug",
+	"nick":" - Gives Bee Badge and TM49 (Fury Cutter)",
+	"pic":"unknown",
+	"reward":"5000",
+	"mons":[{
+		"name":"Ledian",
+		"lv":45,
+		"item":"nothing",
+		"moves":["Comet Punch","Safeguard","Supersonic","Swift"]
+	},{
+		"name":"Beedrill",
+		"lv":46,
+		"item":"nothing",
+		"moves":["Twineedle","Pin Missile","Fury Cutter","Agility"]
+	},{
+		"name":"Yanma",
+		"lv":48,
+		"item":"nothing",
+		"moves":["Double Team","Sonic Boom","Supersonic","Swift"]
+	},{
+		"name":"Ariados",
+		"lv":48,
+		"item":"nothing",
+		"moves":["Leech Life","Spider Web","Fury Swipes","Constrict"]
+	},{
+		"name":"Scizor",
+		"lv":50,
+		"item":"nothing",
+		"moves":["Metal Claw","Swords Dance","Double Team","Fury Cutter"]
+	}]
+},{
+	"name":"Draco",
+	"nick":" - Gives Hyper Badge and TM24 (Dragon Breath)",
+	"pic":"unknown",
+	"reward":"5700",
+	"mons":[{
+		"name":"Dratini",
+		"lv":52,
+		"item":"nothing",
+		"moves":["Slam","Agility","Outrage","Dragon Breath"]
+	},{
+		"name":"Kingdra",
+		"lv":55,
+		"item":"nothing",
+		"moves":["Smoke Screen","Twister","Agility","Hydro Pump"]
+	},{
+		"name":"Dragonair",
+		"lv":55,
+		"item":"nothing",
+		"moves":["Thunder Wave","Twister","Slam","Dragon Rage"]
+	},{
+		"name":"Dragonite",
+		"lv":57,
+		"item":"nothing",
+		"moves":["Thunder Wave","Agility","Outrage","Wing Attack"]
+	},{
+		"name":"Dragonite",
+		"lv":57,
+		"item":"nothing",
+		"moves":["Safeguard","Agility","Dragon Breath","Hyper Beam"]
+	}]
+}],
+"leader_proto":[],
+"e4":[],
+"redaj":[]
+}
