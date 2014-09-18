@@ -3,7 +3,7 @@
 	"name":"Balboa",
 	"nick":"The Hard as Rock Pokémon Master - Gives Stone Badge and TM04 (Rollout)",
 	"pic":"unknown",
-	"reward":"1800",
+	"reward":1800,
 	"mons":[{
 		"name":"Geodude",
 		"lv":12,
@@ -34,7 +34,7 @@
 	"name":"Lilly",
 	"nick":" - Gives Flower Badge and TM22 (Solar Beam)",
 	"pic":"unknown",
-	"reward":"2500",
+	"reward":2500,
 	"mons":[{
 		"name":"Oddish",
 		"lv":18,
@@ -65,7 +65,7 @@
 	"name":"Nora",
 	"nick":" - Gives Square Badge and TM34 (Swagger)",
 	"pic":"unknown",
-	"reward":"3000",
+	"reward":3000,
 	"mons":[{
 		"name":"Furret",
 		"lv":24,
@@ -93,10 +93,10 @@
 		"moves":["Fury Swipes","Faint Attack","Lick","Swagger"]
 	}]
 },{
-	"name":"Natsky",
+	"name":"Desky",
 	"nick":" - Gives Wing Badge and TM17 (Protect)",
 	"pic":"unknown",
-	"reward":"3600",
+	"reward":3600,
 	"mons":[{
 		"name":"Noctowl",
 		"lv":30,
@@ -127,7 +127,7 @@
 	"name":"Poisa",
 	"nick":" - Gives Pathogen Badge and TM36 (Sludge Bomb)",
 	"pic":"unknown",
-	"reward":"4000",
+	"reward":4000,
 	"mons":[{
 		"name":"Arbok",
 		"lv":35,
@@ -155,10 +155,10 @@
 		"moves":["Supersonic","Bite","Confuse Ray","Sludge Bomb"]
 	}]
 },{
-	"name":"Aquaire",
+	"name":"Aquaires",
 	"nick":" - Gives Dew Badge and TM18 (Rain Dance)",
 	"pic":"unknown",
-	"reward":"4700",
+	"reward":4700,
 	"mons":[{
 		"name":"Politoed",
 		"lv":42,
@@ -187,9 +187,9 @@
 	}]
 },{
 	"name":"Boomboug",
-	"nick":" - Gives Bee Badge and TM49 (Fury Cutter)",
+	"nick":" - Gives Buzzing Badge and TM49 (Fury Cutter)",
 	"pic":"unknown",
-	"reward":"5000",
+	"reward":5000,
 	"mons":[{
 		"name":"Ledian",
 		"lv":45,
@@ -201,15 +201,15 @@
 		"item":"nothing",
 		"moves":["Twineedle","Pin Missile","Fury Cutter","Agility"]
 	},{
-		"name":"Yanma",
-		"lv":48,
-		"item":"nothing",
-		"moves":["Double Team","Sonic Boom","Supersonic","Swift"]
-	},{
 		"name":"Ariados",
 		"lv":48,
 		"item":"nothing",
 		"moves":["Leech Life","Spider Web","Fury Swipes","Constrict"]
+	},{
+		"name":"Heracross",
+		"lv":50,
+		"item":"nothing",
+		"moves":["Endure","Take Down","Reversal","Fury Cutter"]
 	},{
 		"name":"Scizor",
 		"lv":50,
@@ -220,7 +220,7 @@
 	"name":"Draco",
 	"nick":" - Gives Hyper Badge and TM24 (Dragon Breath)",
 	"pic":"unknown",
-	"reward":"5700",
+	"reward":5700,
 	"mons":[{
 		"name":"Dratini",
 		"lv":52,
@@ -248,7 +248,482 @@
 		"moves":["Safeguard","Agility","Dragon Breath","Hyper Beam"]
 	}]
 }],
-"leader_proto":[],
-"e4":[],
-"redaj":[]
+"leader_proto":[{
+	"name":"Danky",
+	"nick":" - Gives Black Badge",
+	"pic":"unknown",
+	"reward":6500,
+	"mons":[{
+		"name":"Houndour",
+		"lv":60,
+		"item":"nothing",
+		"moves":["Bite","Faint Attack","Crunch","Thief"]
+	},{
+		"name":"Murkrow",
+		"lv":62,
+		"item":"nothing",
+		"moves":["Pursuit","Faint Attack","Mean Look","Thief"]
+	},{
+		"name":"Sneasel",
+		"lv":63,
+		"item":"nothing",
+		"moves":["Faint Attack","Slash","Beat Up","Agility"]
+	},{
+		"name":"Umbreon",
+		"lv":64,
+		"item":"nothing",
+		"moves":["Pursuit","Quick Attack","Faint Attack","Moonlight"]
+	},{
+		"name":"Houndoom",
+		"lv":65,
+		"item":"nothing",
+		"moves":["Bite","Faint Attack","Crunch","Thief"]
+	}]
+},{
+	"name":"Sparky",
+	"nick":" - Gives Battery Badge",
+	"pic":"unknown",
+	"reward":6500,
+	"mons":[{
+		"name":"Lanturn",
+		"lv":60,
+		"item":"nothing",
+		"moves":["Spark","Confuse Ray","Thunder","Hydro Pump"]
+	},{
+		"name":"Raichu",
+		"lv":62,
+		"item":"nothing",
+		"moves":["Thunderbolt","Quick Attack","Thunder Wave","Growl"]
+	},{
+		"name":"Electabuzz",
+		"lv":64,
+		"item":"nothing",
+		"moves":["Thunder Punch","Swift","Thunderbolt","Thunder"]
+	},{
+		"name":"Electrode",
+		"lv":65,
+		"item":"nothing",
+		"moves":["Rollout","Swift","Explosion","Thunder"]
+	},{
+		"name":"Ampharos",
+		"lv":65,
+		"item":"nothing",
+		"moves":["Zap Cannon","Cotton Spore","ThunderPunch","Thunder"]
+	}]
+},{
+	"name":"Ion",
+	"nick":" - Gives Neon Badge",
+	"pic":"unknown",
+	"reward":7000,
+	"mons":[{
+		"name":"Forretress",
+		"lv":65,
+		"item":"nothing",
+		"moves":["Protect","Explosion","Spikes","Double-Edge"]
+	},{
+		"name":"Steelix",
+		"lv":65,
+		"item":"nothing",
+		"moves":["Curse","Crunch","Iron Tail","Earthquake"]
+	},{
+		"name":"Skarmory",
+		"lv":67,
+		"item":"nothing",
+		"moves":["Curse","Agility","Cut","Steel Wing"]
+	},{
+		"name":"Magneton",
+		"lv":69,
+		"item":"nothing",
+		"moves":["Supersonic","Thunder Wave","Tri Attack","Zap Cannon"]
+	},{
+		"name":"Scizor",
+		"lv":70,
+		"item":"nothing",
+		"moves":["Agility","Metal Claw","Swords Dance","Slash"]
+	}]
+},{
+	"name":"Fierie",
+	"nick":" - Gives Coal Badge",
+	"pic":"unknown",
+	"reward":7000,
+	"mons":[{
+		"name":"Magcargo",
+		"lv":65,
+		"item":"nothing",
+		"moves":["Sunny Day","Harden","Flamethrower","Rock Slide"]
+	},{
+		"name":"Magmar",
+		"lv":67,
+		"item":"nothing",
+		"moves":["Smog","Fire Punch","Confuse Ray","Fire Blast"]
+	},{
+		"name":"Ninetales",
+		"lv":68,
+		"item":"nothing",
+		"moves":["Quick Attack","Roar","Fire Spin","Sunny Day"]
+	},{
+		"name":"Rapidash",
+		"lv":69,
+		"item":"nothing",
+		"moves":["Stop","Fire Spin","Agility","Fire Blast"]
+	},{
+		"name":"Arcanine",
+		"lv":70,
+		"item":"nothing",
+		"moves":["Sunny Day","Take Down","Flame Wheel","Extreme Speed"]
+	}]
+},{
+	"name":"Lilith",
+	"nick":" - Gives Heart Badge",
+	"pic":"unknown",
+	"reward":7500,
+	"mons":[{
+		"name":"Mr. Mime",
+		"lv":66,
+		"item":"nothing",
+		"moves":["DoubleSlap","Baton Pass","Psybeam","Psychic"]
+	},{
+		"name":"Xatu",
+		"lv":68,
+		"item":"nothing",
+		"moves":["Rest","Future Sight","Sleep Talk","Psychic"]
+	},{
+		"name":"Girafarig",
+		"lv":68,
+		"item":"nothing",
+		"moves":["Baton Pass","Stomp","Agility","Psychic"]
+	},{
+		"name":"Jynx",
+		"lv":70,
+		"item":"nothing",
+		"moves":["Lovely Kiss","Perish Song","Dream Eater","Psychic"]
+	},{
+		"name":"Slowbro",
+		"lv":70,
+		"item":"nothing",
+		"moves":["Disable","Withdraw","Amnesia","Psychic"]
+	}]
+},{
+	"name":"Blizzey",
+	"nick":" - Gives Freezing Badge",
+	"pic":"unknown",
+	"reward":7500,
+	"mons":[{
+		"name":"Swinub",
+		"lv":70,
+		"item":"nothing",
+		"moves":["Icy Wind","Endure","Mist","Blizzard"]
+	},{
+		"name":"Delibird",
+		"lv":72,
+		"item":"nothing",
+		"moves":["Present","Icy Wind","Protect","Blizzard"]
+	},{
+		"name":"Piloswine",
+		"lv":74,
+		"item":"nothing",
+		"moves":["Take Down","Fury Attack","Mist","Blizzard"]
+	},{
+		"name":"Sneasel",
+		"lv":74,
+		"item":"nothing",
+		"moves":["Agility","Slash","Icy Wind","Blizzard"]
+	},{
+		"name":"Jynx",
+		"lv":75,
+		"item":"nothing",
+		"moves":["Icy Wind","Mean Look","Ice Punch","Blizzard"]
+	}]
+},{
+	"name":"Guenant",
+	"nick":" - Gives Fist Badge",
+	"pic":"unknown",
+	"reward":8000,
+	"mons":[{
+		"name":"Primeape",
+		"lv":75,
+		"item":"nothing",
+		"moves":["Focus Energy","Seismic Toss","Cross Chop","Thrash"]
+	},{
+		"name":"Hitmonlee",
+		"lv":78,
+		"item":"nothing",
+		"moves":["Rolling Kick","Hi Jump Kick","Mega Kick","Reversal"]
+	},{
+		"name":"Hitmonchan",
+		"lv":78,
+		"item":"nothing",
+		"moves":["Thunder Punch","Mach Punch","Mega Punch","Detect"]
+	},{
+		"name":"Hitmontop",
+		"lv":78,
+		"item":"nothing",
+		"moves":["Quick Attack","Rapid Spin","Agility","Triple Kick"]
+	},{
+		"name":"Machamp",
+		"lv":80,
+		"item":"nothing",
+		"moves":["Dynamic Punch","Karate Chop","Vital Throw","Submission"]
+	}]
+},{
+	"name":"???",
+	"nick":"<a href='//redd.it/2grsep'>It might be <b>you!</b></a> - Gives Lotid Badge",
+	"pic":"unknown",
+	"reward":8000,
+	"mons":[]
+}],
+"e4":[{
+	"name":"Joey",
+	"nick":"and his top percentage Rattatas, of course!",
+	"pic":"unknown",
+	"reward":7000,
+	"mons":[{
+		"name":"Rattata",
+		"lv":100,
+		"item":"Quick Claw",
+		"moves":["Super Fang","Thunder","Blizzard","Iron Tail"]
+	},{
+		"name":"Rattata",
+		"lv":60,
+		"item":"Focus Band",
+		"moves":["Hyper Fang","Shadow Ball","Headbutt","Swift"]
+	},{
+		"name":"Rattata",
+		"lv":62,
+		"item":"Bright Powder",
+		"moves":["Protect","Endure","Rock Smash","Toxic"]
+	},{
+		"name":"Raticate",
+		"lv":65,
+		"item":"King's Rock",
+		"moves":["Headbutt","Hidden Power","Thief","Dig"]
+	},{
+		"name":"Raticate",
+		"lv":68,
+		"item":"Scope Lens",
+		"moves":["Quick Attack","Hyper Fang","Strength","Super Fang"]
+	},{
+		"name":"Raticate",
+		"lv":70,
+		"item":"Leftovers",
+		"moves":["Hyper Beam","Super Fang","Bite","Flame Wheel"]
+	}]
+},{
+	"name":"Azure",
+	"nick":"",
+	"pic":"unknown",
+	"reward":7000,
+	"mons":[{
+		"name":"Haunter",
+		"lv":60,
+		"item":"MiracleBerry",
+		"moves":["Hypnosis","Dream Eater","Confuse Ray","Destiny Bond"]
+	},{
+		"name":"Murkrow",
+		"lv":60,
+		"item":"MiracleBerry",
+		"moves":["Pursuit","Shadow Ball","Night Shade","Faint Attack"]
+	},{
+		"name":"Misdreavus",
+		"lv":65,
+		"item":"Leftovers",
+		"moves":["Confuse Ray","Shadow Ball","Pain Split","Perish Song"]
+	},{
+		"name":"Umbreon",
+		"lv":65,
+		"item":"Leftovers",
+		"moves":["Shadow Ball","Confuse Ray","Faint Attack","Moonlight"]
+	},{
+		"name":"Gengar",
+		"lv":70,
+		"item":"Spell Tag",
+		"moves":["Lick","Shadow Ball","Night Shade","Destiny Bond"]
+	},{
+		"name":"Houndoom",
+		"lv":70,
+		"item":"Black Glasses",
+		"moves":["Shadow Ball","Smog","Flamethrower","Crunch"]
+	}]
+},{
+	"name":"Crimson",
+	"nick":"",
+	"pic":"unknown",
+	"reward":7000,
+	"mons":[{
+		"name":"Slowking",
+		"lv":60,
+		"item":"Mystic Water",
+		"moves":["Surf","Disable","Headbutt","Psychic"]
+	},{
+		"name":"Exeggutor",
+		"lv":62,
+		"item":"Miracle Seed",
+		"moves":["Giga Drain","Stomp","Egg Bomb","Psychic"]
+	},{
+		"name":"Hypno",
+		"lv":64,
+		"item":"Leftovers",
+		"moves":["Hypnosis","Dream Eater","Future Sight","Psychic"]
+	},{
+		"name":"Espeon",
+		"lv":66,
+		"item":"Leftovers",
+		"moves":["Attract","Swift","Morning Sun","Psychic"]
+	},{
+		"name":"Xatu",
+		"lv":68,
+		"item":"Twisted Spoon",
+		"moves":["Fly","Future Sight","Confuse Ray","Psychic"]
+	},{
+		"name":"Alakazam",
+		"lv":70,
+		"item":"Twisted Spoon",
+		"moves":["Psybeam","Recover","Reflect","Psychic"]
+	}]
+},{
+	"name":"Elice",
+	"nick":"",
+	"pic":"unknown",
+	"reward":7000,
+	"mons":[{
+		"name":"Dewgong",
+		"lv":60,
+		"item":"Berry",
+		"moves":["Aurora Beam","Ice Beam","Hyper Beam","Double Team"]
+	},{
+		"name":"Cloyster",
+		"lv":63,
+		"item":"Gold Berry",
+		"moves":["Supersonic","Aurora Beam","Protect","Spikes"]
+	},{
+		"name":"Jynx",
+		"lv":65,
+		"item":"Leftovers",
+		"moves":["Lovely Kiss","Body Slam","Ice Punch","Blizzard"]
+	},{
+		"name":"Lapras",
+		"lv":67,
+		"item":"Mystic Water",
+		"moves":["Mist","Ice Beam","Rain Dance","Hydro Pump"]
+	},{
+		"name":"Piloswine",
+		"lv":68,
+		"item":"Soft Sand",
+		"moves":["Take Down","Earthquake","Icy Wind","Blizzard"]
+	},{
+		"name":"Sneasel",
+		"lv":70,
+		"item":"Never-Melt Ice",
+		"moves":["Slash","Iron Tail","Icy Wind","Ice Punch"]
+	}]
+},{
+	"name":"Pigu",
+	"nick":"(Champion)",
+	"pic":"unknown",
+	"reward":7500,
+	"mons":[{
+		"name":"Porygon2",
+		"lv":64,
+		"item":"Silk Scarf",
+		"moves":["Conversion 2","Recover","Psychic","Tri Attack"]
+	},{
+		"name":"Tyranitar",
+		"lv":67,
+		"item":"Hard Stone",
+		"moves":["Surf","Rock Slide","Thrash","Crunch"]
+	},{
+		"name":"Steelix",
+		"lv":70,
+		"item":"Soft Sand",
+		"moves":["Iron Tail","Crunch","Dragon Breath","Earthquake"]
+	},{
+		"name":"Mew",
+		"lv":72,
+		"item":"Leftovers",
+		"moves":["Surf","Hyper Beam","Earthquake","Psychic"]
+	},{
+		"name":"Ampharos",
+		"lv":73,
+		"item":"Magnet",
+		"moves":["Strength","Thunder Wave","Thunderbolt","Fire Punch"]
+	},{
+		"name":"Skarmory",
+		"lv":75,
+		"item":"Metal Coat",
+		"moves":["Drill Peck","Curse","Mud Slap","Steel Wing"]
+	}]
+}],
+"redaj":[{
+	"name":"Red",
+	"nick":"TPP Red Protagonist",
+	"pic":"unknown",
+	"reward":9900,
+	"mons":[{
+		"name":"<b>LORD HELIX</b>",
+		"lv":100,
+		"item":"nothing",
+		"moves":["Hydro Pump","Withdraw","Surf","Horn Attack"]
+	},{
+		"name":"Venomoth",
+		"lv":90,
+		"item":"nothing",
+		"moves":["Disable","Poison Powder","Leech Life","Stun Spore"]
+	},{
+		"name":"Nidoking",
+		"lv":93,
+		"item":"nothing",
+		"moves":["Surf","Poison Sting","Strength","Fury Attack"]
+	},{
+		"name":"Lapras",
+		"lv":95,
+		"item":"nothing",
+		"moves":["Mist","Body Slam","Surf","Strength"]
+	},{
+		"name":"Pidgeot",
+		"lv":97,
+		"item":"nothing",
+		"moves":["Mirror Move","Sand Attack","Qucik Attack","Sky Attack"]
+	},{
+		"name":"Zapdos",
+		"lv":99,
+		"item":"nothing",
+		"moves":["Thundershock","Drill Peck","Take Down","Thunder"]
+	}]
+},{
+	"name":"AJDNNW",
+	"nick":"TPP Crystal Protagonist",
+	"pic":"unknown",
+	"reward":9900,
+	"mons":[{
+		"name":"Feraligatr",
+		"lv":100,
+		"item":"Ice Heal",
+		"moves":["Surf","Icy Wind","Cut"]
+	},{
+		"name":"Raticate",
+		"lv":90,
+		"item":"Metal Coat",
+		"moves":["Quick Attack","Scary Face","Hyper Fang","Pursuit"]
+	},{
+		"name":"Pidgeot",
+		"lv":93,
+		"item":"Slowpoke Tail",
+		"moves":["Fly","Quick Attack","Wing Attack","Mirror Move"]
+	},{
+		"name":"Espeon",
+		"lv":95,
+		"item":"Full Heal",
+		"moves":["Morning Sun","Flash","Attract","Psychic"]
+	},{
+		"name":"Steelix",
+		"lv":97,
+		"item":"Leftovers",
+		"moves":["Rock Throw","Strength","Earthquake","Iron Tail"]
+	},{
+		"name":"Dragonite",
+		"lv":99,
+		"item":"Max Revive",
+		"moves":["Outrage","Dragon Breath","Twister","Waterfall"]
+	}]
+}]
 }
