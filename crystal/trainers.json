@@ -624,7 +624,7 @@
 	"mons":[{
 		"name":"Porygon2",
 		"lv":64,
-		"item":"Silk Scarf",
+		"item":"Pink Bow",
 		"moves":["Conversion 2","Recover","Psychic","Tri Attack"]
 	},{
 		"name":"Tyranitar",
