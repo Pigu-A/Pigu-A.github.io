@@ -466,11 +466,36 @@
 		"moves":["Dynamic Punch","Karate Chop","Vital Throw","Submission"]
 	}]
 },{
-	"name":"???",
-	"nick":"<a href='//redd.it/2grsep'>It might be <b>you!</b></a> - Gives Lotid Badge",
+	"name":"Mantis",
+	"nick":"a.k.a. <a href='//www.reddit.com/user/BigFatMantis'>/u/BigFatMantis</a> - Gives Lotid Badge",
 	"pic":"unknown",
 	"reward":8000,
-	"mons":[]
+	"mons":[{
+		"name":"Jolteon",
+		"lv":76,
+		"item":"Leftovers",
+		"moves":["Substitute","Baton Pass","Thunderbolt","Toxic"]
+	},{
+		"name":"Starmie",
+		"lv":77,
+		"item":"Leftovers",
+		"moves":["Recover","Surf","Psychic","Ice Beam"]
+	},{
+		"name":"Tauros",
+		"lv":78,
+		"item":"Leftovers",
+		"moves":["Return","Earthquake","Rest","Sleep Talk"]
+	},{
+		"name":"Houndoom",
+		"lv":79,
+		"item":"Leftovers",
+		"moves":["Pursuit","Crunch","Fire Blast","Roar"]
+	},{
+		"name":"Scyther",
+		"lv":80,
+		"item":"MiracleBerry",
+		"moves":["Endure","Reversal","Swords Dance","Wing Attack"]
+	}]
 }],
 "e4":[{
 	"name":"Joey",
