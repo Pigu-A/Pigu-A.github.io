@@ -343,7 +343,7 @@
 	}]
 },{
 	"name":"Fierie",
-	"nick":" - Gives Coal Badge",
+	"nick":" - Gives Fireball Badge",
 	"pic":"unknown",
 	"reward":7000,
 	"mons":[{
@@ -436,7 +436,7 @@
 	}]
 },{
 	"name":"Guenant",
-	"nick":" - Gives Fist Badge",
+	"nick":" - Gives Brick Badge",
 	"pic":"unknown",
 	"reward":8000,
 	"mons":[{
