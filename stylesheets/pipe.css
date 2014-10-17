@@ -1,0 +1,74 @@
+body {
+	background: black;
+}
+
+#pipebox {
+	position: absolute;
+}
+
+.pipe {
+	background: url(pipe.png) no-repeat;
+	width: 16px;
+	height: 16px;
+	display: table-cell;
+}
+
+.piperow .p1 {
+	background-position: 0px -16px;
+}
+
+.piperow .p2 {
+	background-position: 0px -32px;
+}
+
+.piperow .p3 {
+	background-position: 0px -48px;
+}
+
+.piperow .p4 {
+	background-position: 0px -64px;
+}
+
+.piperow .p5 {
+	background-position: 0px -80px;
+}
+
+.piperow .p6 {
+	background-position: 0px -96px;
+}
+
+.piperow .p7 {
+	background-position: 0px -112px;
+}
+
+.piperow .p8 {
+	background-position: 0px -128px;
+}
+
+.piperow .p9 {
+	background-position: 0px -144px;
+}
+
+.piperow .p10 {
+	background-position: 0px -160px;
+}
+
+.piperow .p11 {
+	background-position: 0px -176px;
+}
+
+.piperow .p12 {
+	background-position: 0px -192px;
+}
+
+.piperow .p13 {
+	background-position: 0px -208px;
+}
+
+.piperow .p14 {
+	background-position: 0px -224px;
+}
+
+.piperow .p15 {
+	background-position: 0px -240px;
+}
