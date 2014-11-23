@@ -81,12 +81,12 @@
 						c.fillStyle = o[i].bgcolor;
 						cc.fillStyle = o[i].bgcolor;
 						cc.fillRect(st,h-50,2,sh-h);
-						if(sh < 20 && st-boxw >= 0) {
+						if(sh < 55 && st-boxw >= 0) {
 							sh = h-100;
 							st = st-boxw;
 							while(chk(c,st,sh,boxw)) sh -= 60;
 						}
-						if(sh < 20) {
+						if(sh < 55) {
 							var sc = c.getImageData(0,0,w,h);
 							var scc = cc.getImageData(0,0,w,h);
 							nh = 55-sh;
