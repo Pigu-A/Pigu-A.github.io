@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>List of released Pokémon in TPP</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<script>
+		function todhm(a){return Math.floor(a/1440)+"d "+Math.floor((a/60)%24)+"h "+Math.floor(a%60)+"m ";}
+		function chk(a,b,c,d) {
+			var o = false;
+			for(var k = 0; k <= d; k++) {
+				var t = a.getImageData(b+k,c-1,1,1);
+				o = o || t.data[3] == 255;
+			}
+			return o;
+		}
+		$(document).ready(function(){
+			var tm = 0;
+			var w = innerWidth;
+			var h = innerHeight - $("#board").position().top;
+			$("#board").attr("width", w);
+			$("#board").attr("height", h);
+			$("#lines").attr("width", w);
+			$("#lines").attr("height", h);
+			var c = document.getElementById("board").getContext("2d");
+			var cc = document.getElementById("lines").getContext("2d");
+			cc.fillStyle="white";
+			
+			//Scale
+			var scw = w*0.94;
+			var scb = 0.03*w
+			cc.fillRect(scb,h-50,scw,2);
+			cc.fillRect(scb,h-70,2,42);
+			cc.fillRect(w-scb,h-70,2,42);
+			var sct = Math.floor(scw / 100);
+			var scs = scw/sct;
+			for(var i = scs; i < scw; i += scs)	cc.fillRect(scb+i,h-60,2,22);
+			
+			$.getJSON("https://dl.dropboxusercontent.com/u/87416830/releasedmons.json",function(o){
+				$("#legend").html("");
+				for(i in o) {
+					var el = document.createElement("div");
+					el.style.color = o[i].color;
+					el.style.backgroundColor = o[i].bgcolor;
+					el.innerHTML = o[i].run;
+					$("#legend").append(el);
+					var m = o[i].mons;
+					for(j in m) if(m[j].when > tm) tm = m[j].when;
+				}
+				tm = Math.ceil(tm/1440)*1440;
+				c.textAlign = "center";
+				c.textBaseline = "bottom";
+				for(i in o) {
+					var m = o[i].mons;
+					for(j in m) {
+						var jn = m[j].name;
+						var ji = ""
+						if(m[j].nick.length != 0) ji = '"'+m[j].nick+'"';
+						var jd = todhm(m[j].when);
+						c.font = "13px Arial";
+						var jnl = c.measureText(jn).width;
+						c.font = "10px Arial";
+						var jil = c.measureText(ji).width;
+						c.font = "12px Arial";
+						var jdl = c.measureText(jd).width;
+						var boxw = Math.max(jdl,jnl,jil) + 10;
+						var st = scb+scw*m[j].when/tm;
+						var sh = h-100;
+						
+						while(chk(c,st,sh,boxw)) sh -= 60;
+						c.fillStyle = o[i].bgcolor;
+						cc.fillStyle = o[i].bgcolor;
+						cc.fillRect(st,h-50,2,sh-h);
+						if(sh < 20) {
+							sh = h-100;
+							st = st-boxw;
+							while(chk(c,st,sh,boxw)) sh -= 60;
+						}
+						c.fillRect(st,sh,boxw,-55);
+						c.fillStyle = o[i].color;
+						c.font = "13px Arial";
+						c.fillText(jn,st+boxw/2,sh-35);
+						c.font = "10px Arial";
+						c.fillText(ji,st+boxw/2,sh-22);
+						c.font = "12px Arial";
+						c.fillText(jd,st+boxw/2,sh-5);
+					}
+				}
+				
+				//Scale label
+				cc.font = "12px Arial";
+				cc.textAlign = "center";
+				cc.textBaseline = "top";
+				cc.fillStyle = "white";
+				for(var i = 0; i <= sct; i++) cc.fillText(todhm(i*tm/sct),scb+scs*i,h-25);
+				c.fillStyle="white";
+				c.fillRect(0,0,w,2);
+			})
+		})
+	</script>
+  </head>
+  <body>
+      <h1>List of released Pokémon in TPP</h1>
+	  <p>Here is a list of released Pokémon in Twitch Plays Pokémon event.</p>
+	  <div id="legend">Loading...</div>
+	  <canvas id="lines">Whoops, your browser doesn't support HTML 5! Go get a new one!</canvas>
+	  <canvas id="board"></canvas>
+	</body>
+</html>

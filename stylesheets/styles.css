@@ -951,3 +951,25 @@ section #title .credits.right {
 	background: url(pokedollar.png) no-repeat;
 	background-position: 10px 3px;
 }
+
+#board , #lines {
+	position: absolute;
+	left: 0;
+}
+
+#legend {
+	position: fixed;
+	top: 10px;
+	right: 10px;
+	border: 2px solid white;
+}
+
+#legend div:not(:last-child) {
+	border-right: 1px solid white;
+}
+
+#legend div {
+	padding: 5px;
+	text-align: center;
+	display: table-cell;
+}
