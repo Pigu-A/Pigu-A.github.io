@@ -6,7 +6,7 @@
     <title>List of released Pokémon in TPP</title>
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="javascripts/respond.js"></script>
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -18,12 +18,11 @@
 	<script>
 		function todhm(a){return Math.floor(a/1440)+"d "+Math.floor((a/60)%24)+"h "+Math.floor(a%60)+"m ";}
 		function chk(a,b,c,d) {
-			var o = false;
+			var t = a.getImageData(b,c-1,d,1);
 			for(var k = 0; k <= d; k++) {
-				var t = a.getImageData(b+k,c-1,1,1);
-				o = o || t.data[3] == 255;
+				if(t.data[3+d*4] == 255) return true;
 			}
-			return o;
+			return false;
 		}
 		$(document).ready(function(){
 			var tm = 0;
@@ -82,12 +81,12 @@
 						c.fillStyle = o[i].bgcolor;
 						cc.fillStyle = o[i].bgcolor;
 						cc.fillRect(st,h-50,2,sh-h);
-						if(sh < 50 && st-boxw >= 0) {
+						if(sh < 20 && st-boxw >= 0) {
 							sh = h-100;
 							st = st-boxw;
 							while(chk(c,st,sh,boxw)) sh -= 60;
 						}
-						if(sh < 50) {
+						if(sh < 20) {
 							var sc = c.getImageData(0,0,w,h);
 							var scc = cc.getImageData(0,0,w,h);
 							nh = 55-sh;
