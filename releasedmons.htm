@@ -46,7 +46,7 @@
 			var scs = scw/sct;
 			for(var i = scs; i < scw-1; i += scs) cc.fillRect(scb+i,h-60,2,22);
 			
-			$.getJSON("https://dl.dropboxusercontent.com/u/87416830/releasedmons.json",function(o){
+			$.getJSON("releasedmons.json",function(o){
 				$("#legend").html("");
 				for(i in o) {
 					var el = document.createElement("div");
