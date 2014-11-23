@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>List of released Pokémon in TPP</title>
+    <title>List of released PokÃ©mon in TPP</title>
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
     <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -45,7 +45,7 @@
 			cc.fillRect(w-scb,h-70,2,42);
 			var sct = Math.floor(scw / 100);
 			var scs = scw/sct;
-			for(var i = scs; i < scw; i += scs)	cc.fillRect(scb+i,h-60,2,22);
+			for(var i = scs; i < scw-1; i += scs) cc.fillRect(scb+i,h-60,2,22);
 			
 			$.getJSON("https://dl.dropboxusercontent.com/u/87416830/releasedmons.json",function(o){
 				$("#legend").html("");
@@ -82,11 +82,23 @@
 						c.fillStyle = o[i].bgcolor;
 						cc.fillStyle = o[i].bgcolor;
 						cc.fillRect(st,h-50,2,sh-h);
-						if(sh < 20) {
+						if(sh < 50 && st-boxw >= 0) {
 							sh = h-100;
 							st = st-boxw;
 							while(chk(c,st,sh,boxw)) sh -= 60;
 						}
+						if(sh < 50) {
+							var sc = c.getImageData(0,0,w,h);
+							var scc = cc.getImageData(0,0,w,h);
+							nh = 55-sh;
+							h = h+nh;
+							$("#board").attr("height", h);
+							$("#lines").attr("height", h);
+							c.putImageData(sc,0,nh);
+							cc.putImageData(scc,0,nh);
+						}
+						c.textAlign = "center";
+						c.textBaseline = "bottom";
 						c.fillRect(st,sh,boxw,-55);
 						c.fillStyle = o[i].color;
 						c.font = "13px Arial";
@@ -111,10 +123,10 @@
 	</script>
   </head>
   <body>
-      <h1>List of released Pokémon in TPP</h1>
-	  <p>Here is a list of released Pokémon in Twitch Plays Pokémon event.</p>
-	  <div id="legend">Loading...</div>
+      <h1>List of released PokÃ©mon in TPP</h1>
+	  <p>Here is a list of released PokÃ©mon in Twitch Plays PokÃ©mon event.</p>
 	  <canvas id="lines">Whoops, your browser doesn't support HTML 5! Go get a new one!</canvas>
 	  <canvas id="board"></canvas>
+	  <div id="legend">Loading...</div>
 	</body>
 </html>
