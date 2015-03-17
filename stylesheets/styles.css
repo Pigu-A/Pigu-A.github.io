@@ -973,3 +973,49 @@ section #title .credits.right {
 	text-align: center;
 	display: table-cell;
 }
+
+.maplist th, .maplist td {
+	border-right: 1px solid #434343;
+	text-align: center;
+}
+
+.maplist tr:first-child, .maplist td:first-child {
+	border-top: 1px solid #434343;
+	border-left: 1px solid #434343;
+}
+
+.maplist-special, .maplist .mapname div:last-child {
+	width: 25%;
+}
+
+.maplist .mapname div:first-child {
+	float: left;
+	width: 75%;
+}
+
+.maplist .mapname div:last-child {
+	float: right;
+	width: 25%;
+}
+
+.maplist .mapname div:last-child, .monentry div:last-child {
+	font-size: 12px;
+}
+
+.seen {
+	background-color:white;
+	color:black;
+}
+
+.caught {
+	background-color:green;
+	color:white;
+}
+
+.note h4 {
+	margin: 0 0 5px;
+}
+
+.note small {
+	display: block;
+}
