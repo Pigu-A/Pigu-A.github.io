@@ -988,6 +988,14 @@ section #title .credits.right {
 	width: 25%;
 }
 
+.maplist-special {
+	min-width: 320px;
+}
+
+.maplist .mapname {
+	min-width: 120px;
+}
+
 .maplist .mapname div:first-child {
 	float: left;
 	width: 75%;
