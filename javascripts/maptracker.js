@@ -85,7 +85,7 @@ var maps = [
 ["Route 6",Route6Mons],["Route 7",Route7Mons],["Route 8",Route8Mons],["Route 9",Route9Mons],["Route 10",Route10Mons],
 ["Route 11",Route11Mons],["Route 12",Route12Mons],["Route 13",Route13Mons],["Route 14",Route14Mons],["Route 15",Route15Mons],
 ["Route 16",Route16Mons],["Route 17",Route17Mons],["Route 18",Route18Mons],["Route 19",WaterMons],["Route 20",WaterMons],
-["Route 21|Grass",Route21Mons],["|Water",Route21Mons],["Route 22",Route22Mons],["Route 23",Route23Mons],["Route 24",Route24Mons],
+["Route 21|Grass",Route21Mons],["|Water",Route21WMons],["Route 22",Route22Mons],["Route 23",Route23Mons],["Route 24",Route24Mons],
 ["Route 25",Route25Mons],["Viridian Forest",ForestMons],["Mt. Moon|1F",MoonMons1],["|B1F",MoonMonsB1],["|B2F",MoonMonsB2],
 ["Rock Tunnel|B1F",TunnelMonsB1],["|B2F",TunnelMonsB2],["Power Plant",PowerPlantMons],
 ["Victory Road|1F",PlateauMons1],["|2F",PlateauMons2],["|3F",PlateauMons3],
