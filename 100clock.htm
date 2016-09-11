@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>0:00:00 00/0/0</title>
+<style>
+body {
+	background-color: black;
+}
+.hcl {
+	display: block;
+	color: white;
+	font-family: monospace;
+	font-size: 30px;
+	position: fixed;
+}
+.hcl div {
+	float: left;
+	padding: 5px;
+	border: 2px solid white;
+}
+#time {
+	border-right-width: 1px;
+}
+#date {
+	border-left-width: 1px;
+}
+</style>
+<script src="javascripts/jquery-3.1.0.min.js"></script>
+<script>
+function x(a,b) {
+	return Math.floor(a / Math.pow(10,b)) % 10;
+}
+function y(a,b) {
+	var t = Math.floor(a / Math.pow(10,b)) % 100;
+	return t < 10 ? "0" + t : t;
+}
+var T=0;
+setInterval(function(){
+	T = (new Date().getTime() - 946684800000) / 864;
+	var Tt = x(T,4) + ":" + y(T,2) + ":" + y(T,0);
+	var Td = y(T,5) + "/" + x(T,7) + "/" + Math.floor(T / 1e8);
+	$("#time").text(Tt);
+	$("#date").text(Td);
+	$("title").text(Tt + " " + Td + " (" + T/1e5 + ")");
+}, 16)
+setInterval(function(){$("#fine").text(T/1e5);}, 50/3)
+</script>
+</head>
+<body>
+<div class="hcl"><div id="time">0:00:00</div><div id="date">00/0/0</div><div id="fine">0</div></div>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<html>
+<head>
+<script src="javascripts/jquery-3.1.0.min.js"></script>
+<script>
+var q = false;
+var w = false;
+var a = false;
+var s = false;
+var z = false;
+var x = false;
+var os = "";
+var dict = [' ','a','','c',',','b','i','f'
+		   ,'','e','','d',':','h','j','g'
+		   ,"'",'k','/','m',';','l','s','p'
+		   ,'*','o','ar','n','!','r','t','q'
+		   ,'','ch','','sh','en','gh','ow','ed'
+		   ,'','wh','','th','.','ou','w','er'
+		   ,'-','u','ing','x','?','v','the','and'
+		   ,'"','z','ble','y','(','of','with','for'];
+function key(b) {
+	if(b) {
+		if(os.length > 0) os = os.substring(0, os.length - 1);
+		$("#out").text(os + "_");
+	}
+	else {
+		var t = 0
+		if(q) t += 1;
+		if(w) t += 2;
+		if(a) t += 4;
+		if(s) t += 8;
+		if(z) t += 16;
+		if(x) t += 32;
+		os += dict[t];
+		q = false;
+		w = false;
+		a = false;
+		s = false;
+		z = false;
+		x = false;
+		$("cell").removeClass("a");
+		$("#out").text(os + "_");
+	}
+}
+$(document).ready(function(){
+$("body").keypress(function(e){
+	var i = String.fromCharCode(e.which).toLowerCase();
+	switch(i) {
+	case 'q':
+		if(q) {
+			q = false;
+			$("#0").removeClass("a");
+		}
+		else {
+			q = true;
+			$("#0").addClass("a");
+		}
+	break;
+	case 'w':
+		if(w) {
+			w = false;
+			$("#1").removeClass("a");
+		}
+		else {
+			w = true;
+			$("#1").addClass("a");
+		}
+	break;
+	case 'a':
+		if(a) {
+			a = false;
+			$("#2").removeClass("a");
+		}
+		else {
+			a = true;
+			$("#2").addClass("a");
+		}
+	break;
+	case 's':
+		if(s) {
+			s = false;
+			$("#3").removeClass("a");
+		}
+		else {
+			s = true;
+			$("#3").addClass("a");
+		}
+	break;
+	case 'z':
+		if(z) {
+			z = false;
+			$("#4").removeClass("a");
+		}
+		else {
+			z = true;
+			$("#4").addClass("a");
+		}
+	break;
+	case 'x':
+		if(x) {
+			x = false;
+			$("#5").removeClass("a");
+		}
+		else {
+			x = true;
+			$("#5").addClass("a");
+		}
+	break;
+	case ' ': key(false); break;
+	case '-': key(true);
+	}
+});
+});
+</script>
+<style>
+.braille {
+	width: 24px;
+	height: 36px;
+	border: 1px solid black;
+	float: left;
+	margin-right: 4px;
+}
+cell {
+	display: block;
+	float: left;
+	width: 8px;
+	height: 8px;
+	margin: 2px;
+	background-color: #FDD;
+}
+cell.a {
+	background-color: red;
+}
+textarea {
+	background-color: white;
+	width: 480px;
+	height: 38px;
+	border: 1px solid black;
+}
+</style>
+</head>
+<body>
+<div class="braille">
+	<cell class="" id="0"></cell>
+	<cell class="" id="1"></cell>
+	<cell class="" id="2"></cell>
+	<cell class="" id="3"></cell>
+	<cell class="" id="4"></cell>
+	<cell class="" id="5"></cell>
+</div>
+<textarea id="out" placeholder="Cell map: q, w, a, s, z, x" disabled></textarea>
+</body>

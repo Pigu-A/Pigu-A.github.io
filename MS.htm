@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MS 1.1</title>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<style>
+div.game {
+    border-style:double;
+    border-width:5px;
+}
+div.game-top {
+    margin:5px;
+}
+div.div {
+    margin:0px;
+    border-bottom-style:double;
+    border-bottom-width:5px;
+}
+button.disabled {
+    font-family:"Trebuchet MS", Helvetica, sans-serif;
+    margin:0px;
+    border-style:solid;
+    border-width:2px;
+    border-color:black;
+    width:25px;
+    height:25px;
+    background: none;
+    background-color:gray;
+}
+.cleared {
+    background: none;
+    background-color:green;
+}
+button.over {
+    background: none;
+    background-color:red;
+}
+button.one {
+    color:purple;
+}
+button.two {
+    color:navy;
+}
+button.three {
+    color:teal;
+}
+button.four {
+    color:seagreen;
+}
+button.five {
+    color:olive;
+}
+button.six {
+    color:gold;
+}
+button.seven {
+    color:orange;
+}
+button.eight {
+    color:darkred;
+}
+button.flag {
+    color:lime;
+}
+.big {
+    font-family:"Trebuchet MS", Helvetica, sans-serif;
+    font-variant:small-caps;
+    font-size:16px;
+    margin:0px;
+}
+.mode {
+    font-family:"Trebuchet MS", Helvetica, sans-serif;
+    font-variant:small-caps;
+    background-color:white;
+    margin:5px;
+    border-style:solid;
+    border-width:2px;
+    border-color:black;
+    font-size:16px;
+}
+.resetbtn {
+    font-family:"Trebuchet MS", Helvetica, sans-serif;
+    background-color:white;
+    margin:5px 0px;
+    border-style:solid;
+    border-width:2px;
+    border-color:black;
+    font-size:20px;
+}
+button.game {
+    font-family:"Trebuchet MS", Helvetica, sans-serif;
+    background: #efefef; /* Old browsers */
+    background: -moz-linear-gradient(-45deg, #efefef 0%, #ededed 50%, #f2f2f2 51%, #fefefe 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#efefef), color-stop(50%,#ededed), color-stop(51%,#f2f2f2), color-stop(100%,#fefefe)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(-45deg, #efefef 0%,#ededed 50%,#f2f2f2 51%,#fefefe 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(-45deg, #efefef 0%,#ededed 50%,#f2f2f2 51%,#fefefe 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(-45deg, #efefef 0%,#ededed 50%,#f2f2f2 51%,#fefefe 100%); /* IE10+ */
+    background: linear-gradient(135deg, #efefef 0%,#ededed 50%,#f2f2f2 51%,#fefefe 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#efefef', endColorstr='#fefefe',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    margin:0px;
+    border-style:solid;
+    border-width:2px;
+    border-color:black;
+    width:25px;
+    height:25px;
+}
+</style>
+<script>
+var game = new Array();
+var revealqueue;
+var isFirstClick = true;
+var w;
+var h;
+var m;
+var gameover = false;
+var isFlagging = false;
+var form = '\
+<p>Width: </p><input id="width" type="text"/>\
+<p>Height: </p><input id="height" type="text"/>\
+<p>Mines: </p><input id="mines" type="text"/>\
+<p id="err" style="color:red"></p>\
+<button id="gen" onClick="load();">Generate</button>\
+';
+var time=0;
+function timer() {
+    time++;
+    document.getElementById("time").innerHTML = "Time: " + time;
+}
+function load() {
+    w = Math.round(document.getElementById("width").value);
+    h = Math.round(document.getElementById("height").value);
+    m = Math.round(document.getElementById("mines").value);
+    if(isNaN(w)||isNaN(h)||isNaN(m)) {
+        document.getElementById("err").innerHTML = "Error: Invalid value entered.";
+    }
+    else if(w<10||h<10) {
+        document.getElementById("err").innerHTML = "Error: Size is too small.";
+    }
+    else if(m<Math.round(w*h/10)||m>Math.round(w*h*4/5)) {
+        document.getElementById("err").innerHTML = "Error: Number of mines have to be between "
+            + Math.round(w*h/10) + " and " + Math.round(w*h*4/5) + ".";
+    }
+    else {
+        var gamegen = '\
+        <div class="game-top">\
+        <p id="time" class="big">Time: 0</p>\
+        <p id="mines" class="big">Mines left: 0</p>\
+        <button id="reset" class="resetbtn" onClick="resetgame();">RESET</button>\
+        </div>\
+        <div class="div"></div>\
+        <button id="mode" class="mode" onClick="changemode();">Uncover</button>\
+        <div class="div"></div>\
+        ';
+        document.getElementById("err").innerHTML = "";
+        document.getElementById("gen").innerHTML = "Reset and generate";
+        document.getElementById("main").className = "game";
+        document.getElementById("main").setAttribute("style","width:" + (w*25) + "px;");
+        for(var i=0;i<h;i++) {
+            game[i] = new Array();
+            for(var j=0;j<w;j++) {
+                game[i][j] = "0";
+                gamegen += '<button onMouseOver="hover(' + i + ',' + j + ')" '
+                    + 'onMouseOut="reset(' + i + ',' + j + ')" '
+                    + 'class="game" id="r' + i + 'w' + j + '" '
+                    + 'onClick="calc(' + i + ',' + j + ');">&nbsp;</button>';
+            }
+            gamegen += "<br/>";
+        }
+        document.getElementById("main").innerHTML = gamegen;
+        document.getElementById("mines").innerHTML = "Mines left: " + m;
+    }
+}
+function calc(x,y) {
+	revealqueue = [[x,y]];
+	while(revealqueue.length > 0) {
+		var t = revealqueue.pop();
+		calcc(t[0],t[1]);
+	}
+}
+function calcc(x,y) {
+if(!gameover) {
+    if(isFirstClick) {
+        var size = w*h;
+        var i = m;
+        while(i>0) {
+            var r = Math.round(Math.random()*size);
+            if(game[Math.floor(r/w)][r%w]!="B"&&(Math.floor(r/w)!=x&&r%w!=y)) {
+                game[Math.floor(r/w)][r%w] = "B";
+                i--;
+            }
+        }
+        timerr = setInterval(function(){timer()},1000);
+        isFirstClick = false;
+    }
+    var mines=0;
+    if(x>0&&y>0) if(game[x-1][y-1] == "B") mines++;
+	if(x>0) if(game[x-1][y] == "B") mines++;
+	if(x>0&&y<(w-1)) if(game[x-1][y+1] == "B") mines++;
+	if(y>0) if(game[x][y-1] == "B") mines++;
+	if(y<(w-1)) if(game[x][y+1] == "B") mines++;
+	if(x<(h-1)&&y>0) if(game[x+1][y-1] == "B") mines++;
+	if(x<(h-1)) if(game[x+1][y] == "B") mines++;
+	if(x<(h-1)&&y<(w-1)) if(game[x+1][y+1] == "B") mines++;
+    if(isFlagging) {
+        if(game[x][y] != "C") {
+            if(document.getElementById('r' + x + 'w' + y).innerHTML == "F") {
+                document.getElementById('r' + x + 'w' + y).innerHTML = "&nbsp;";
+                document.getElementById('r' + x + 'w' + y).setAttribute("class","game");
+                m++;
+                document.getElementById("mines").innerHTML = "Mines left: " + m;
+            }
+            else {
+                document.getElementById('r' + x + 'w' + y).innerHTML = "F";
+                document.getElementById('r' + x + 'w' + y).setAttribute("class","game flag");
+                m--;
+                document.getElementById("mines").innerHTML = "Mines left: " + m;
+            }
+        }
+    }
+    else {
+		if(game[x][y] != "C") {
+        if(document.getElementById('r' + x + 'w' + y).innerHTML == "F") {
+            m++;
+            document.getElementById("mines").innerHTML = "Mines left: " + m;
+        }
+        if(game[x][y]=="B") {
+            for(var i=0;i<h;i++) {
+                for(var j=0;j<w;j++) {
+                    if(game[i][j]=="B") {
+                    document.getElementById('r' + i + 'w' + j).setAttribute("class","over disabled");
+                    document.getElementById('r' + i + 'w' + j).innerHTML = "*";
+                    }
+                }
+            }
+            document.getElementById("reset").setAttribute("style","color:red");
+            clearInterval(timerr);
+            gameover = true;
+        }
+        else {
+            if(mines!=0) document.getElementById('r' + x + 'w' + y).innerHTML = mines;
+			else {
+				if(x>0&&y>0) revealqueue.push([x-1,y-1]);
+				if(x>0) revealqueue.push([x-1,y]);
+				if(x>0&&y<(w-1)) revealqueue.push([x-1,y+1]);
+				if(y>0) revealqueue.push([x,y-1]);
+				if(y<(w-1)) revealqueue.push([x,y+1]);
+				if(x<(h-1)&&y>0) revealqueue.push([x+1,y-1]);
+				if(x<(h-1)) revealqueue.push([x+1,y]);
+				if(x<(h-1)&&y<(w-1)) revealqueue.push([x+1,y+1]);
+			}
+            switch(mines) {
+                case 0: document.getElementById('r' + x + 'w' + y).setAttribute("class","disabled"); break;
+                case 1: document.getElementById('r' + x + 'w' + y).setAttribute("class","one disabled"); break;
+                case 2: document.getElementById('r' + x + 'w' + y).setAttribute("class","two disabled"); break;
+                case 3: document.getElementById('r' + x + 'w' + y).setAttribute("class","three disabled"); break;
+                case 4: document.getElementById('r' + x + 'w' + y).setAttribute("class","four disabled"); break;
+                case 5: document.getElementById('r' + x + 'w' + y).setAttribute("class","five disabled"); break;
+                case 6: document.getElementById('r' + x + 'w' + y).setAttribute("class","six disabled"); break;
+                case 7: document.getElementById('r' + x + 'w' + y).setAttribute("class","seven disabled"); break;
+                case 8: document.getElementById('r' + x + 'w' + y).setAttribute("class","eight disabled");
+            }
+            game[x][y] = "C";
+        }}
+    }
+    clear = true;
+    for(var i=0;i<h;i++) {
+        for(var j=0;j<w;j++) {
+            if(game[i][j]=="0") {
+                clear = false;
+            }
+        }
+    }
+    if(clear) {
+        for(var i=0;i<h;i++) {
+            for(var j=0;j<w;j++) {
+                if(game[i][j]=="B") {
+                document.getElementById('r' + i + 'w' + j).setAttribute("class","clear disabled");
+                document.getElementById('r' + i + 'w' + j).innerHTML = "✺";
+                }
+            }
+        }
+        document.getElementById("reset").setAttribute("style","color:green");
+        clearInterval(timerr);
+        gameover = true;
+    }
+}}
+function changemode() {
+    if(isFlagging) {
+        isFlagging = false;
+        document.getElementById("mode").innerHTML = "Uncover";
+    }
+    else {
+        isFlagging = true;
+        document.getElementById("mode").innerHTML = "Flag";
+    }
+}
+function hover(x,y) {
+    document.getElementById('r' + x + 'w' + y).setAttribute("style","background: none; background-color:silver");
+}
+function reset(x,y) {
+    document.getElementById('r' + x + 'w' + y).setAttribute("style","");
+} 
+function resetgame() {
+    var r=confirm("Are you sure you want to reset the game?");
+    if (r) {
+        document.getElementById("main").innerHTML = form;
+        document.getElementById("main").setAttribute("class","");
+        game = new Array();
+        isFirstClick = true;
+        isFlagging = false;
+        clearInterval(timerr);
+        gameover = false;
+        time = 0;
+    }
+}
+</script>
+</head>
+<body>
+<div id="main" class="" style=""></div>
+<script>document.getElementById("main").innerHTML = form;</script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+.content, header, #new-update-form, .liveupdate-listing, .usertext {
+margin-left: 0 !important;
+max-width: none !important;
+}
+
+.liveupdate {
+width: auto !important;
+max-width: none !important;
+}
+

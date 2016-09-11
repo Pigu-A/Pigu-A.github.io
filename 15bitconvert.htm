@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>15-bit Color Converter</title>
+<style>
+.slider input {
+	width: 400px
+}
+.slider p {
+	display: inline-block;
+	width: 40px;
+	margin: 0;
+}
+</style>
+<script>
+var col = "#000000";
+var tex, inp;
+var modetog = false;
+var r = 0, g = 0, b = 0;
+function hex(a) {
+	if(a == 0) return "00";
+	if(a < 16) return "0" + a.toString(16);
+	return a.toString(16);
+}
+function colall(a) {
+	eles = document.getElementsByTagName("p");
+	for(i in eles) if(eles[i].style != undefined) eles[i].style.color = a;
+}
+function init() {
+	tex = document.getElementById("tex");
+	tex2 = document.getElementById("tex2");
+	ter = document.getElementById("ter");
+	inpr = document.getElementById("inpr");
+	inpg = document.getElementById("inpg");
+	inpb = document.getElementById("inpb");
+	valr = document.getElementById("valr");
+	valg = document.getElementById("valg");
+	valb = document.getElementById("valb");
+	butt = document.getElementById("bittoggle");
+	inph = document.getElementById("hexfield");
+	document.body.style.background = col;
+	colall("white");
+}
+function togglemode() {
+	if(modetog) {
+		r = to24(parseInt(r));
+		g = to24(parseInt(g));
+		b = to24(parseInt(b));
+		inpr.value = r;
+		inpg.value = g;
+		inpb.value = b;
+		inpr.setAttribute("max","255");
+		inpg.setAttribute("max","255");
+		inpb.setAttribute("max","255");
+		butt.innerHTML = "24-bit -> 15-bit";
+		inph.value = "";
+		inph.setAttribute("placeholder","000000");
+		modetog = false;
+	}
+	else {
+		r = to15(parseInt(r));
+		g = to15(parseInt(g));
+		b = to15(parseInt(b));
+		inpr.value = r;
+		inpg.value = g;
+		inpb.value = b;
+		inpr.setAttribute("max","31");
+		inpg.setAttribute("max","31");
+		inpb.setAttribute("max","31");
+		butt.innerHTML = "15-bit -> 24-bit";
+		inph.value = "";
+		inph.setAttribute("placeholder","0000");
+		modetog = true;
+	}
+	change(r,g,b);
+}
+function parsehex() {
+	var n = parseInt(inph.value, 16);
+	if(isNaN(n)) return;
+	if(modetog) change(n % 32, (n >> 5) % 32, (n >> 10) % 32);
+	else change((n >> 16) % 256, (n >> 8) % 256, n % 256);
+}
+function to15(a) {
+	return Math.floor((a + 1) * 31 / 255)
+}
+function to24(a) {
+	return Math.floor(a * 255 / 31)
+}
+function change(red,green,blue) {
+	if(modetog) {
+		t15r = parseInt(red);
+		t15g = parseInt(green);
+		t15b = parseInt(blue);
+		t24r = to24(parseInt(red));
+		t24g = to24(parseInt(green));
+		t24b = to24(parseInt(blue));
+	}
+	else {
+		t15r = to15(parseInt(red));
+		t15g = to15(parseInt(green));
+		t15b = to15(parseInt(blue));
+		t24r = parseInt(red);
+		t24g = parseInt(green);
+		t24b = parseInt(blue);
+	}
+	if((t24r+t24g+t24b) / 3 > 127) colall("black");
+	else colall("white");
+	col = "#" + hex(t24r) + hex(t24g) + hex(t24b);
+	col2 = "#" + hex(to24(t15r)) + hex(to24(t15g)) + hex(to24(t15b));
+	document.body.style.background = col;
+	tex.innerHTML = "Resulting HTML Color: " + col;
+	tex2.innerHTML = "Resulting HTML Color (15-bit adjusted): " + col2;
+	ter.innerHTML = "Resulting RGB Color: " + t15r + ", " + t15g + ", " + t15b;
+	valr.innerHTML = red;
+	valg.innerHTML = green;
+	valb.innerHTML = blue;
+}
+</script>
+</head>
+<body onload="init()">
+<button onclick="togglemode()" id="bittoggle">24-bit -> 15-bit</button>
+<input onchange="parsehex()" id="hexfield" placeholder="000000"></input>
+<div class="slider">
+	<p id="labr">Red</p>
+	<input onchange="r=this.value;change(r,g,b)" type="range" id="inpr" value="0" min="0" max="255">
+	<p id="valr">0</p>
+</div>
+<div class="slider">
+	<p id="labg">Green</p>
+	<input onchange="g=this.value;change(r,g,b)" type="range" id="inpg" value="0" min="0" max="255">
+	<p id="valg">0</p>
+</div>
+<div class="slider">
+	<p id="labb">Blue</p>
+	<input onchange="b=this.value;change(r,g,b)" type="range" id="inpb" value="0" min="0" max="255">
+	<p id="valb">0</p>
+</div>
+<p id="tex">Resulting HTML Color: #000000</p>
+<p id="tex2">Resulting HTML Color (15-bit adjusted): #000000</p>
+<p id="ter">Resulting RGB Color: 0, 0, 0</p>
+</body>
+</html>

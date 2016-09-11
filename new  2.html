@@ -1,0 +1,75 @@
+<!--
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>TwitchPlaysPokemon</title>
+<link rel="icon" href="/favicon.ico" >
+<link rel="shortcut icon" href="/favicon.ico" >
+<style>
+#vbar, #hbar {
+	position: fixed;
+	background-color: gray;
+}
+#vbar {
+	height: 100%;
+	width: 5px;
+	top: 0;
+	cursor: ew-resize;
+}
+#hbar {
+	height: 5px;
+	cursor: ns-resize;
+}
+</style>
+<script src="javascripts/jquery-3.1.0.min.js"></script>
+<script>
+var hp = 0.75, vp = 0.5, dh = false, dv = false;
+updatePos = function() {
+	hpos = innerWidth * hp;
+	vpos = innerHeight * vp;
+	$("#vbar").css({"left":hpos+"px"});
+	$("#hbar").css({"top":vpos+"px","left":hpos+"px","width":(innerWidth-hpos)+"px"});
+	$("#twitch").attr({"width":hpos+"px"});
+	$("#irc").attr({"width":(innerWidth-hpos)+"px","height":vpos+"px"});
+	$("#twitchchat").attr({"width":(innerWidth-hpos)+"px","height":(innerHeight-vpos)+"px"});
+};
+$(document).ready(function() {
+	updatePos();
+	$(window).resize(updatePos)
+	$(document).mousemove(function(event){
+		if(dh) {
+			hp = (event.pageX-2)/innerWidth;
+			updatePos();
+		}
+		if(dv) {
+			vp = (event.pageY-2)/innerHeight;
+			updatePos();
+		}
+    });
+	$("#vbar").mousedown(function(){dh=true});
+	$("#hbar").mousedown(function(){dv=true});
+	$("#vbar,#hbar").mouseup(function(){dh=false;dv=false});
+	$("#vbar,#hbar").mouseleave(function(){dh=false;dv=false});
+});
+</script>
+</head>
+
+<body style = "margin:0; height: 100%;">
+<div style="height: 100%; margin: 0; overflow: hidden;">
+   <iframe id="irc" frameborder=0 scrolling=no src="http://kiwiirc.com/client/irc.freenode.net/?nick=ANONTPP-?&theme=mini#twitchplayspokemon" align="right">
+      <p>Your browser does not support iframes.</p>
+   </iframe>
+   <iframe id="twitch" frameborder=0 scrolling=no src="http://www.twitch.tv/twitchplayspokemon/embed" align="left" height="100%">
+      <p>Your browser does not support iframes.</p>
+   </iframe>
+  <iframe id="twitchchat" frameborder=0 scrolling=no src="http://www.twitch.tv/twitchplayspokemon/chat?popout=" align="right">
+        <p> Your Browser Does Not Support Iframes. </p>
+ </iframe>
+ </div>
+<div id="vbar"></div>
+<div id="hbar"></div>
+</body>
+
+</html>
