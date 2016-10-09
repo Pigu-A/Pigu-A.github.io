@@ -105,12 +105,14 @@ function change(red,green,blue) {
 	}
 	if((t24r+t24g+t24b) / 3 > 127) colall("black");
 	else colall("white");
+	var t15l = t15r | ((t15g & 7) << 5);
+	var t15h = (t15g >> 3) | (t15b << 2);
 	col = "#" + hex(t24r) + hex(t24g) + hex(t24b);
 	col2 = "#" + hex(to24(t15r)) + hex(to24(t15g)) + hex(to24(t15b));
 	document.body.style.background = col;
 	tex.innerHTML = "Resulting HTML Color: " + col;
 	tex2.innerHTML = "Resulting HTML Color (15-bit adjusted): " + col2;
-	ter.innerHTML = "Resulting RGB Color: " + t15r + ", " + t15g + ", " + t15b;
+	ter.innerHTML = "Resulting RGB Color: " + t15r + ", " + t15g + ", " + t15b + " ($" + hex(t15h) + hex(t15l) + ")";
 	valr.innerHTML = red;
 	valg.innerHTML = green;
 	valb.innerHTML = blue;
@@ -137,6 +139,6 @@ function change(red,green,blue) {
 </div>
 <p id="tex">Resulting HTML Color: #000000</p>
 <p id="tex2">Resulting HTML Color (15-bit adjusted): #000000</p>
-<p id="ter">Resulting RGB Color: 0, 0, 0</p>
+<p id="ter">Resulting RGB Color: 0, 0, 0 ($0000)</p>
 </body>
 </html>
