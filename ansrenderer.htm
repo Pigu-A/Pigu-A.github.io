@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>.ans Renderer</title>
+  <script src="javascripts/ans.js"></script>
+  <script>
+    function proc() {
+      var fi = document.getElementById("fi");
+      var pic = document.getElementById("pic");
+      renderFromFile(fi.files[0],pic);
+    }
+  </script>
+</head>
+<body>
+  <div>
+    <input id="fi" type="file" accept=".ans" onchange="proc()"></input>
+  </div>
+  <canvas id="pic"></canvas>
+</body>
+</html>
