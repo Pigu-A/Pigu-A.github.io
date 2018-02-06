@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>SNES Sample Offset-ifier</title>
+<style>
+body {font-family: sans-serif}
+tr *:only-child {width: 100px}
+</style>
+<script>
+function conv(a,b) {
+	var in1 = parseInt(document.getElementById("in1").value);
+	var in2 = parseInt(document.getElementById("in2").value);
+	var in3 = parseInt(document.getElementById("in3").value);
+	var res1 = document.getElementById("res1");
+	var res2 = document.getElementById("res2");
+	var res3 = document.getElementById("res3");
+	var s = Math.round(in2/16)*16
+	var e = Math.round(in3/16)*16
+	var r = Math.round(parseInt(in1)*(e-s)/(in3-in2))
+	res1.innerHTML = isNaN(r) ? "?" : r
+	res2.innerHTML = isNaN(s) ? "?" : s
+	res3.innerHTML = isNaN(e) ? "?" : e
+}
+</script>
+</head>
+<body>
+<table>
+<tr>
+	<th>Rate</th>
+	<th>Start</th>
+	<th>End</th>
+</tr>
+<tr>
+	<td><input id="in1" onchange="conv()"></input></td>
+	<td><input id="in2" onchange="conv()"></input></td>
+	<td><input id="in3" onchange="conv()"></input></td>
+</tr>
+<tr>
+	<td id="res1">0</td>
+	<td id="res2">0</td>
+	<td id="res3">0</td>
+</tr>
+</table>
+</body>
+</html>
