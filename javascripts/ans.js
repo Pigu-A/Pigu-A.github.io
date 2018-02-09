@@ -34,27 +34,27 @@ var ans = {
 		this.initialized = true;
 	},
 
-	renderFromUrl: function(url,canvas) {
+	renderFromUrl: function(url,canvas,maxwidth=-1) {
 		if (!this.initialized) this._init();
 		var req = new XMLHttpRequest();
 		req.responseType = "arraybuffer";
 		req.onreadystatechange = function(){
 			if (this.readyState == 4 && this.status == 200)
-				this.render(this.response,canvas);
+				this.render(this.response,canvas,maxwidth);
 		};
 		req.open("GET", url, true);
 		req.send();
 	},
 
-	renderFromFile: function(fi,canvas) {
+	renderFromFile: function(fi,canvas,maxwidth=-1) {
 		if (!this.initialized) this._init();
 		var rdr = new FileReader();
 		var render = this.render;
-		rdr.onload = (c=>function(d){render(d.target.result,c);})(canvas);
+		rdr.onload = ((c,mw)=>function(d){render(d.target.result,c,mw);})(canvas,maxwidth);
 		rdr.readAsArrayBuffer(fi);
 	},
 
-	render: function(buf,canvas) {
+	render: function(buf,canvas,maxwidth=-1) {
 		var dat = new DataView(buf);
 		var w = 80;
 		var h = 25;
@@ -191,10 +191,11 @@ var ans = {
 		}
 		ctx.putImageData(id,0,0);
 		// put the graphics in hidden canvas into the argument canvas with aspect ratio correction
-		canvas.setAttribute("width",w*8);
-		canvas.setAttribute("height",h*19.2);
+		var ws = maxwidth > 0 && w*8 > maxwidth ? maxwidth/w/8 : 1;
+		canvas.setAttribute("width",w*8*ws);
+		canvas.setAttribute("height",h*19.2*ws);
 		var ctx = canvas.getContext("2d");
-		ctx.drawImage(hc,0,0,w*8,h*19.2);
+		ctx.drawImage(hc,0,0,w*8*ws,h*19.2*ws);
 		delete hc;
 	}
 };
